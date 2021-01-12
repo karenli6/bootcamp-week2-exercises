@@ -35,13 +35,11 @@ exports.up = async knex => knex.schema.createTable('users', table => {
     .notNullable()
   
   table 
-    .integer('numPost')
+    .integer('numPosts')
     .notNullable()
 
 })
-
-exports.down = async knex => 
+ 
+exports.down = async knex => {
   knex.schema.dropTableIfExists('users')
-  // knex.schema.dropTableIfExists('friends')
-  // knex.schema.dropTableIfExists('posts')
-
+}

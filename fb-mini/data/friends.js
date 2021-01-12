@@ -18,4 +18,4 @@ for (let i = 0; i <20; i+=1){
   friendsData.push(casual.friends({user1Id, user2Id}))
 }
 
-module.exports = friendsData
+module.exports = friendsData 

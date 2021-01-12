@@ -9,7 +9,7 @@ casual.define('users', () => ({
   bio: casual.sentence,
   followers: casual.integer(from=0, to=1000),
   following: casual.integer(from=0, to=1000),
-  numPost: casual.integer(from=0, to=50)
+  numPosts: casual.integer(from=0, to=50)
 }))
 
 
@@ -19,5 +19,5 @@ for (let i = 0; i < 20; ++i) {
   userData.push(casual.users)
 } 
 
-console.log(userData)
+// console.log(userData)
 module.exports = userData
