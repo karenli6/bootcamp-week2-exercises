@@ -9,8 +9,39 @@ exports.up = async knex => knex.schema.createTable('users', table => {
     .string('email')
     .unique()
     .notNullable()
+  table
+    .string('firstname')
+    .notNullable()
 
-  table.timestamps(true)
+
+  table
+    .string('lastname')
+    .notNullable()
+
+  table
+    .string('password')
+    .unique()
+    .notNullable()
+  table
+    .string('bio')
+    .notNullable()
+
+  table
+    .integer('followers')
+    .notNullable()
+
+  table
+    .integer('following')
+    .notNullable()
+  
+  table 
+    .integer('numPost')
+    .notNullable()
+
 })
 
-exports.down = async knex => knex.schema.dropTableIfExists('users')
+exports.down = async knex => 
+  knex.schema.dropTableIfExists('users')
+  // knex.schema.dropTableIfExists('friends')
+  // knex.schema.dropTableIfExists('posts')
+

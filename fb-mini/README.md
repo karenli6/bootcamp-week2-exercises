@@ -27,7 +27,7 @@ Now that we've planned out the structure of our database, let's build it! To all
   DB_PASSWORD=abcdefghabcdefghabcdefghabcdefgh
   DB_PORT=5432
   NODE_ENV=development
-  ```
+  ``` 
 
 ### Migrations
 Start by writing all the migrations for your database. Remember, create a new migration for a new table with `npx knex migrate:make <TABLE_NAME>`. The migration for the `users` table is started for you.
