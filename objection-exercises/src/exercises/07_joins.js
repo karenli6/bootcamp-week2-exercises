@@ -1,19 +1,37 @@
 const cleanup = require('../lib/cleanup')
 // Import models
+const User = require('../models/User')
 
 const run = async () => {
+  try {
+    // Get all users and their pets
+    const data = await User.query().withGraphJoined('pets')
+    // console.dir(data, {depth:3})
+  
+    // Get all users, their pets, AND their children
+    const fam = await User.query().withGraphJoined('[pets, children]')
+    // console.dir(fam, {depth:10})
+
+    // Get all users, their parents, and their grandparents
+    const extended_fam = await User.query().withGraphJoined('grandparent')
+    console.dir(extended_fam, {depth:10})
+
+
+    cleanup()
+    return data
+
+
+  } catch (err) {
+    console.log(err)
+  }
   // Write Queries and Logs Here !!!
 
-  // Get all users and their pets
 
-  // Get all users, their pets, AND their children
 
-  // Get all users, their parents, and their grandparents
 
   // Get all users, their pets, their chilren, and their childrens' pets
 
   // -----
-  cleanup()
 }
 
 run()
