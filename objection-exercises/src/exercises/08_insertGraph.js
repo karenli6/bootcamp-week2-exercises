@@ -1,13 +1,26 @@
 const cleanup = require('../lib/cleanup')
 // Import models
+const User = require('../models/User')
 
 const run = async () => {
-  // Write Queries and Logs Here !!!
+  try {
+    // Insert a new person name Peter Bynum with two pet DOGs named Rocco & Rosey
+    const graph = await User.query().insertGraph({
+      firstName: 'Peter',
+      lastName: 'Bynum',
+      pets: [
+        {
+          type: 'DOG',
+          name: 'Rocco'
+        }
+      ]
 
-  // Insert a new person name Peter Bynum with two pet DOGs named Rocco & Rosey
+    })
 
-  // -----
-  cleanup()
+    return graph
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 run()

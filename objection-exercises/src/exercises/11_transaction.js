@@ -1,5 +1,6 @@
 const cleanup = require('../lib/cleanup')
 // Import models
+const User = require('../models/User')
 
 const run = async () => {
   /**
@@ -8,6 +9,12 @@ const run = async () => {
     pets. If that total number exceeds 15, it should delete all BIRDS. Test
     the transaction by throwing an error: throw new Error("This is an error").
    */
+  try {
+
+
+  } catch (err) {
+    console.log(err)
+  }
 
 
   // -----

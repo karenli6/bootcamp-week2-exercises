@@ -13,8 +13,9 @@ const run = async () => {
     // console.dir(fam, {depth:10})
 
     // Get all users, their parents, and their grandparents
-    const extended_fam = await User.query().withGraphJoined('grandparent')
-    console.dir(extended_fam, {depth:10})
+    const extended_fam = await User.query().withGraphJoined('parent.^2 ')
+    // console.dir(extended_fam, {depth:10})
+    console.log(extended_fam)
 
 
     cleanup()
