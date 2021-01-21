@@ -1,5 +1,4 @@
 // Write your Relation model here!
-const {ManyToManyRelation} = require('./BaseModel')
 const BaseModel = require('./BaseModel')
 
 class Relation extends BaseModel {
